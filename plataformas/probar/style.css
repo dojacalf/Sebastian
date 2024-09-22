@@ -1,0 +1,15 @@
+.aa {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+}
+
+.flex {
+    height: 600px;
+    
+    background-color: blue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
