@@ -1,0 +1,4 @@
+modules = ["web", "cpp-clang14"]
+
+[nix]
+channel = "stable-24_05"
