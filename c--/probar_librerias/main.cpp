@@ -1,19 +1,23 @@
-#include<iostream>
+#include <iostream>
 
-int main(){	
-	int arr[10];
-	int *p = arr;
-	for(int i = 0 ;i<10;i++){
-		*(p +i) = 10;
-
-}
-	for(int i = 0;i<10;i++){
-		std::cout<< *(p+i) << std::endl;
+void swap(int* a, int *b){
+	int *temp = *a;
+	a* = *b;
+	b* = *temp;
 }
 
 
-	
-return 0;
+int main() {
+	int *n1 = new int;
+	int *n2 = new int;
+
+	*n1 = 1;
+	*n2 = 0;
+	swap(n1,n2);
+	std::cout<<*n1<<std::endl;
+	std::cout<<*n1<<std::endl;
+
+  return 0;
 }
 
 /*
@@ -25,4 +29,6 @@ num -> bota el valor de num
 *ptr ->bota el valor dentro de ptr
 ptr -> bota una ubicacion xd
 &num  -> es la ubicacion donde esta num
- */
+
+int *ptr = new int; -> sirve para crear puntero sin usar otra variable
+*/
