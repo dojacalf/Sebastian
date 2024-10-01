@@ -1,21 +1,28 @@
 #include <iostream>
+using namespace std;
 
-void swap(int* a, int *b){
-	int *temp = *a;
-	a* = *b;
-	b* = *temp;
-}
-
+class nodo{
+	private:
+		int dato;
+		nodo* next;
+	public:
+	nodo(){}
+	nodo(int val){
+		dato = val;
+		next = nullptr;
+	}
+	int getdato(){
+		return dato;
+	}
+	void unir(nodo* sig){
+		next = sig;
+	}
+};
 
 int main() {
-	int *n1 = new int;
-	int *n2 = new int;
-
-	*n1 = 1;
-	*n2 = 0;
-	swap(n1,n2);
-	std::cout<<*n1<<std::endl;
-	std::cout<<*n1<<std::endl;
+	nodo xd(10);
+	nodo* ff(20);
+	xd.unir(ff);
 
   return 0;
 }
@@ -31,4 +38,7 @@ ptr -> bota una ubicacion xd
 &num  -> es la ubicacion donde esta num
 
 int *ptr = new int; -> sirve para crear puntero sin usar otra variable
+fun(int *a)-> el parametro es un puntero
+
+*fuc(){return a} -> a:puntero *a:valor dentro de a
 */
