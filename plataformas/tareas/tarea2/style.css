@@ -1,0 +1,46 @@
+html,body{
+    
+height: 100%;
+margin: 0;
+padding: 0;
+}
+.contenedor{
+    width: 100%;
+    height: 100%;
+}
+.fila1{
+    width: 100%;
+    height: 33.3%;
+    background-color: aliceblue;
+display: flex;
+flex-direction: row;
+
+}
+.fila2{
+    width: 100%;
+    height: 33.3%;
+    background-color:bisque;
+    display: flex;
+    flex-direction: row;
+}
+.fila3{
+    width: 100%;
+    height: 33.3%;
+    background-color:darkblue;
+    display: flex;
+    flex-direction: row;
+}
+.f1{
+    width: 10%;
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.b{
+    width: 80%;
+    height: 80%;
+    border-radius: 20%;
+    background-color: red;
+}

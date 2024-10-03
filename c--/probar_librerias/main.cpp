@@ -1,30 +1,86 @@
 #include <iostream>
 using namespace std;
 
-class nodo{
-	private:
-		int dato;
-		nodo* next;
-	public:
-	nodo(){}
-	nodo(int val){
-		dato = val;
-		next = nullptr;
-	}
-	int getdato(){
-		return dato;
-	}
-	void unir(nodo* sig){
-		next = sig;
-	}
+class Nodo{
+    private:
+        int dato;
+        Nodo *sig;
+    public:
+        Nodo(int v){
+            dato = v;
+            sig = NULL;
+        }
+        Nodo(){}
+        Nodo *retSig(){
+            return sig;
+        }
+        int retDato(){
+            return dato;
+        }
+        void unirCon(Nodo *n){
+            sig = n;
+        }
 };
+class Pila{
+    private:
+        Nodo* cima;
 
-int main() {
-	nodo xd(10);
-	nodo* ff(20);
-	xd.unir(ff);
+    public:
 
-  return 0;
+    Pila(){
+        cima = NULL;
+    }
+
+    void Push(int v){
+        Nodo *n = new Nodo(v);
+        /*
+        if(cima == NULL){
+            cima = n;
+        }else{
+            n->unirCon(cima);
+            cima = n;
+        }
+        */
+        n->unirCon(cima);
+        cima = n;
+    }
+    void Pop(){
+        if(cima != NULL){
+            Nodo *temp = cima;
+            cima = temp->retSig();
+            delete temp;
+        }
+    }
+    void mostrarDatos(){
+        Nodo *temp = cima;
+        while(temp != NULL){
+            cout<<temp->retDato()<<endl;
+            temp = temp->retSig();
+        }
+    }
+    int Size(){
+        Nodo *temp = cima;
+        int i=0;
+        while(temp != NULL){
+            i++;
+            temp = temp->retSig();
+        }
+        return i;
+    }
+};
+int main()
+{
+    Pila* pi = new Pila;
+    pi->Push(3);
+    pi->Push(5);
+    pi->Push(8);
+    pi->Push(7);
+    pi->Pop();
+    pi->Pop();
+    pi->mostrarDatos();
+    
+    
+    return 0;
 }
 
 /*
