@@ -1,0 +1,5 @@
+20 4
+380 izquierda
+720 derecha
+1340 derecha
+1040 izquierda
